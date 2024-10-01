@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Notes</h2>
+    <div class="d-flex justify-content-end mb-3">
+      <a routerLink="/create-note" class="btn btn-primary">Create New Note</a>
+    </div>
+    <div *ngIf="notes.length === 0" class="text-center">No notes available</div>
+    <div *ngFor="let note of notes" class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ note.title }}</h5>
+        <p class="card-text">{{ note.content }}</p>
+        <button (click)="deleteNote(note.id)" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
